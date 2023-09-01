@@ -1,4 +1,4 @@
-/******************************************************************************
+﻿/******************************************************************************
  * The MIT License (MIT)
  *
  * Copyright (c) 2019-2023 Baldur Karlsson
@@ -253,7 +253,7 @@ rdcstr GetFriendlyName(const rdcstr &deviceID)
   //
   // We do this here so that we sneakily take advantage of the above caching - otherwise we spam adb
   // root commands into the log
-  Android::adbExecCommand(deviceID, "root");
+  //Android::adbExecCommand(deviceID, "root");
 
   rdcstr manuf =
       Android::adbExecCommand(deviceID, "shell getprop ro.product.manufacturer").strStdout.trimmed();
@@ -276,22 +276,22 @@ rdcstr GetFriendlyName(const rdcstr &deviceID)
 
 bool HasRootAccess(const rdcstr &deviceID)
 {
-  RDCLOG("Checking for root access on %s", deviceID.c_str());
+  //RDCLOG("Checking for root access on %s", deviceID.c_str());
 
-  // Try switching adb to root and check a few indicators for success
-  // Nothing will fall over if we get a false positive here, it just enables
-  // additional methods of getting things set up.
+  //// Try switching adb to root and check a few indicators for success
+  //// Nothing will fall over if we get a false positive here, it just enables
+  //// additional methods of getting things set up.
 
-  Process::ProcessResult result = adbExecCommand(deviceID, "root");
+  //Process::ProcessResult result = adbExecCommand(deviceID, "root");
 
-  rdcstr whoami = adbExecCommand(deviceID, "shell whoami").strStdout.trimmed();
-  if(whoami == "root")
-    return true;
+  //rdcstr whoami = adbExecCommand(deviceID, "shell whoami").strStdout.trimmed();
+  //if(whoami == "root")
+  //  return true;
 
-  rdcstr checksu =
-      adbExecCommand(deviceID, "shell test -e /system/xbin/su && echo found").strStdout.trimmed();
-  if(checksu == "found")
-    return true;
+  //rdcstr checksu =
+  //    adbExecCommand(deviceID, "shell test -e /system/xbin/su && echo found").strStdout.trimmed();
+  //if(checksu == "found")
+  //  return true;
 
   return false;
 }

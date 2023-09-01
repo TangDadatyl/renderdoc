@@ -1,4 +1,4 @@
-/******************************************************************************
+﻿/******************************************************************************
  * The MIT License (MIT)
  *
  * Copyright (c) 2019-2023 Baldur Karlsson
@@ -311,7 +311,7 @@ bool CheckAndroidServerVersion(const rdcstr &deviceID, ABI abi)
   rdcstr hostVersionName = GitVersionHash;
 
   // False positives will hurt us, so check for explicit matches
-  if((hostVersionCode == versionCode) && (hostVersionName == versionName))
+  if((hostVersionCode == versionCode)/* && (hostVersionName == versionName)*/)
   {
     RDCLOG("Installed server version (%s:%s) is compatible", versionCode.c_str(),
            versionName.c_str());
@@ -345,6 +345,11 @@ Process::ProcessResult ListPackages(const rdcstr &deviceID, const rdcstr &parame
 
 RDResult InstallRenderDocServer(const rdcstr &deviceID)
 {
+  int debug = 1;
+  if(debug)
+  {
+	  return ResultCode::Succeeded;
+  }
   ResultCode result = ResultCode::Succeeded;
 
   rdcarray<ABI> abis = GetSupportedABIs(deviceID);
