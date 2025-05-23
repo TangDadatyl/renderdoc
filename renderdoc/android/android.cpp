@@ -348,7 +348,7 @@ RDResult InstallRenderDocServer(const rdcstr &deviceID)
   int debug = 1;
   if(debug)
   {
-	  return ResultCode::Succeeded;
+	  //return ResultCode::Succeeded;
   }
   ResultCode result = ResultCode::Succeeded;
 
