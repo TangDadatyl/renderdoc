@@ -260,8 +260,8 @@ void RDCFile::Open(const rdcstr &path)
 
   if(!m_File)
   {
-    SET_ERROR_RESULT(m_Error, ResultCode::FileNotFound,
-                     "Can't open capture file '%s' for read - errno %d", path.c_str(), errno);
+    //SET_ERROR_RESULT(m_Error, ResultCode::FileNotFound,
+    //                 "Can't open capture file '%s' for read - errno %d", path.c_str(), errno);
     return;
   }
 

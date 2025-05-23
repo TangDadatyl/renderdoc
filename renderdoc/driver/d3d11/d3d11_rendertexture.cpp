@@ -283,7 +283,7 @@ TextureShaderDetails D3D11DebugManager::GetShaderDetails(ResourceId id, CompType
 
   if(!foundResource)
   {
-    RDCERR("bad texture trying to be displayed");
+    //RDCERR("bad texture trying to be displayed");
     return TextureShaderDetails();
   }
 

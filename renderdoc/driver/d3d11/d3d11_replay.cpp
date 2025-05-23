@@ -645,7 +645,7 @@ TextureDescription D3D11Replay::GetTexture(ResourceId id)
     return tex;
   }
 
-  RDCERR("Unrecognised/unknown texture %s", ToStr(id).c_str());
+  //RDCERR("Unrecognised/unknown texture %s", ToStr(id).c_str());
 
   tex.byteSize = 0;
   tex.dimension = 2;

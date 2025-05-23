@@ -282,8 +282,8 @@ extern "C" RENDERDOC_API void RENDERDOC_CC RENDERDOC_LogMessage(LogType type, co
   RDCCOMPILE_ASSERT(arraydim<LogType>() == 5, "External and internal LogType enums must match");
 
 #if ENABLED(DEBUGBREAK_ON_ERROR_LOG)
-  if(type == LogType::Error)
-    RDCBREAK();
+  //if(type == LogType::Error)
+  //  RDCBREAK();
 #endif
 
   if(type == LogType::Fatal)

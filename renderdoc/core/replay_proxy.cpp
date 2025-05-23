@@ -2836,15 +2836,15 @@ bool ReplayProxy::CheckError(ReplayProxyPacket receivedPacket, ReplayProxyPacket
 {
   if(m_FatalError != ResultCode::Succeeded)
   {
-    RDCERR("Fatal error detected while processing %s: %s", ToStr(expectedPacket).c_str(),
-           ResultDetails(m_FatalError).Message().c_str());
+    //RDCERR("Fatal error detected while processing %s: %s", ToStr(expectedPacket).c_str(),
+    //       ResultDetails(m_FatalError).Message().c_str());
     m_IsErrored = true;
     return true;
   }
 
   if(m_Writer.IsErrored() || m_Reader.IsErrored() || m_IsErrored)
   {
-    RDCERR("Error during processing of %s", ToStr(expectedPacket).c_str());
+    //RDCERR("Error during processing of %s", ToStr(expectedPacket).c_str());
     m_IsErrored = true;
     return true;
   }
